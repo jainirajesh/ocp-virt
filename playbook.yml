@@ -1,6 +1,7 @@
 ---
 - name: Playbook for OpenShift Virt
   hosts: localhost
+  gather_facts: no
   collections:
     - rlopez.ocp_virt
 
