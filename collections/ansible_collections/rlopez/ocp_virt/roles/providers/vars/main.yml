@@ -1,2 +1,6 @@
 ---
 # vars file for providers
+vmware_host: "ire-lab1-vc02.dtcp.local"
+provider_name: "vmware"
+vmware_credentials: "vmware-credentials"
+provider_namespace: "openshift-mtv"
