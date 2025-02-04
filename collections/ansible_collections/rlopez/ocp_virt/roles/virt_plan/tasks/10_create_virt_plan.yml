@@ -93,13 +93,8 @@
 #             name: vmware
 #             namespace: "{{ migration_namespace }}"
 
-- name: Get storage class information
-  kubernetes.core.k8s_info:
-    api_version: storage.k8s.io/v1
-    kind: StorageClass
-  register: storage_classes
-
 - name: Find default storage class
+  storage_classes: "{{ storage_classes }}"
   set_fact:
     default_storage_class: "{{ item.metadata.name }}"
   loop: "{{ storage_classes.resources }}"
