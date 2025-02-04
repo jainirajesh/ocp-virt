@@ -101,12 +101,6 @@
   debug:
     msg: "{{ default_storage_class }}"
 
-- name: Create or update a StorageMap
-  kubernetes.core.k8s:
-    namespace: "{{ migration_namespace }}"
-    definition: "{{ lookup('template', 'datastore.yaml.j2' ) | from_yaml }}"
-    state: present
-
 - name: Deploy Virt Plan
   kubernetes.core.k8s:
     state: present
