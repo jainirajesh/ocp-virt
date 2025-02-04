@@ -94,14 +94,8 @@
 #             namespace: "{{ migration_namespace }}"
 
 - name: Find default storage class
-  storage_classes: "{{ storage_classes }}"
   set_fact:
-    default_storage_class: "{{ item.metadata.name }}"
-  loop: "{{ storage_classes.resources }}"
-  when:
-    - item.metadata.annotations is defined
-    - "'storageclass.kubernetes.io/is-default-class' in item.metadata.annotations"
-    - item.metadata.annotations['storageclass.kubernetes.io/is-default-class'] == 'true'
+    default_storage_class: "{{ storage_classes }}"
 
 - name: Print default storage class name
   debug:
