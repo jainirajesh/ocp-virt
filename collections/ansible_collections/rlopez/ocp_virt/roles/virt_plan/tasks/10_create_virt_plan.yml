@@ -1,6 +1,9 @@
 ---
 - name: Build a list of all the folders
   vmware.vmware_rest.vcenter_folder_info:
+    vcenter_hostname: "{{ vcenter_hostname }}"
+    vcenter_username: "{{ vcenter_username }}"
+    vcenter_password: "{{ vcenter_password }}"
   register: all_folders
 
 - name: Filter VM folders
