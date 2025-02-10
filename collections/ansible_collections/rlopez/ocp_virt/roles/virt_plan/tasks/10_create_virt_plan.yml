@@ -104,6 +104,7 @@
 - name: Deploy Virt Plan
   kubernetes.core.k8s:
     state: present
+    validate_certs: no
     definition:
       apiVersion: forklift.konveyor.io/v1beta1
       kind: Plan
