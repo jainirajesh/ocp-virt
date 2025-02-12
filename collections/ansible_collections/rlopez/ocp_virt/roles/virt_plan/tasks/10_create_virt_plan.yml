@@ -104,9 +104,7 @@
 - name: Deploy Virt Plan
   kubernetes.core.k8s:
     state: present
-    validate_certs: no  
-    username: kubeadmin
-    password: TScPn-U2GU2-qyfZr-PLnWq
+    validate_certs: no
     #automountServiceAccountToken: false
     definition:
       apiVersion: forklift.konveyor.io/v1beta1
