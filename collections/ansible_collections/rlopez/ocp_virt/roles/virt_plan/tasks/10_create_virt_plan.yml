@@ -104,7 +104,8 @@
 - name: Deploy Virt Plan
   kubernetes.core.k8s:
     state: present
-    validate_certs: no
+    validate_certs: no    
+    api_key: "Bearer {{ lookup('env', 'K8S_BEARER_TOKEN') }}"
     #automountServiceAccountToken: false
     definition:
       apiVersion: forklift.konveyor.io/v1beta1
