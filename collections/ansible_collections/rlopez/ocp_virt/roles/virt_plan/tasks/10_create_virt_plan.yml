@@ -132,7 +132,10 @@
         targetNamespace: "{{ migration_target_namespace }}"
         vms: "{{ vms_for_plan_spec }}"
         warm: false
-
+  environment:
+        K8S_AUTH_API_TOKEN: {{ SERVICE_TOKEN_FILENAME }}
+        K8S_AUTH_KUBE_CONFIG: "/root/.kube/config"
+        
 - name: Create a Migration manifest to run the Plan CR
   kubernetes.core.k8s:
     api_version: forklift.konveyor.io/v1beta1
