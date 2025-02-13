@@ -132,8 +132,6 @@
         targetNamespace: "{{ migration_target_namespace }}"
         vms: "{{ vms_for_plan_spec }}"
         warm: false
-    headers:
-      Authorization: "{{ SERVICE_TOKEN_FILENAME }}"
         
 - name: Create a Migration manifest to run the Plan CR
   kubernetes.core.k8s:
