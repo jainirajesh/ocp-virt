@@ -105,7 +105,7 @@
   kubernetes.core.k8s:
     state: present
     validate_certs: no
-    api_key: "{{ SERVICE_TOKEN_FILENAME }}"
+    api_key: "Authorization: {{ SERVICE_TOKEN_FILENAME }}"
     #automountServiceAccountToken: false
     definition:
       apiVersion: forklift.konveyor.io/v1beta1
