@@ -106,6 +106,8 @@
     state: present
     validate_certs: no
     verify_ssl: false
+    headers:
+      Authorization: "{{ SERVICE_TOKEN_FILENAME }}"
     #automountServiceAccountToken: false
     definition:
       apiVersion: forklift.konveyor.io/v1beta1
